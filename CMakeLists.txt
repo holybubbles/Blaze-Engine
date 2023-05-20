@@ -8,7 +8,8 @@ find_package(box2d REQUIRED)
 find_package(asio REQUIRED)
 find_package(stb REQUIRED)
 
-add_executable(BlazeEngine engine.cpp)
+add_executable(BlazeEngine Engine.cpp src/core/Window.cpp)
+
 target_link_libraries(BlazeEngine 
       SDL2::SDL2
       SDL2::SDL2main
