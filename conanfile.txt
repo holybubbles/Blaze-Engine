@@ -1,0 +1,11 @@
+[requires]
+sdl/2.26.1
+glad/0.1.36
+glm/cci.20230113
+box2d/2.4.1
+asio/1.28.0
+stb/cci.20220909
+
+[generators]
+CMakeDeps
+CMakeToolchain
