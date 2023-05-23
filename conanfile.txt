@@ -1,6 +1,6 @@
 [requires]
 sdl/2.26.1
-glad/0.1.36
+glew/2.2.0
 glm/cci.20230113
 box2d/2.4.1
 asio/1.28.0
