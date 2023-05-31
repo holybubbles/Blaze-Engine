@@ -1,4 +1,5 @@
 #pragma once
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -13,13 +14,17 @@ class FileLoader {
     std::ifstream file(filePath);
 
     if (!file.is_open()) {
-      return nullptr;
+      std::cout << "Could not open file - "
+                << std::filesystem::current_path().append(filePath)
+                << std::endl;
+      return "";
     }
 
     while (file) {
       std::string line;
       std::getline(file, line);
       fileContents += line;
+      fileContents += '\n';
     }
 
     return std::move(fileContents);
