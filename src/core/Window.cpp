@@ -1,9 +1,13 @@
 #include "Window.h"
 
-#include <gl/glew.h>
+#include <GL/glew.h>
 
-Window::Window(const std::string title, int xPos, int yPos, int width,
-               int height, Uint32 flags) {
+Window::Window(const std::string title,
+               int xPos,
+               int yPos,
+               int width,
+               int height,
+               Uint32 flags) {
   m_window = std::unique_ptr<SDL_Window, SDLWindowDestroyer>(
       SDL_CreateWindow(title.c_str(), xPos, yPos, width, height, flags));
 
@@ -19,4 +23,6 @@ Window::Window(const std::string& title, WindowSettings settings) {
   m_context = SDL_GL_CreateContext(m_window.get());
 }
 
-Window::~Window() { SDL_GL_DeleteContext(m_context); }
+Window::~Window() {
+  SDL_GL_DeleteContext(m_context);
+}
